@@ -1,0 +1,51 @@
+{%extends 'base.html'%}
+{%block title_block%}
+
+<title>movie-detail</title>
+
+{%endblock%}
+{%block body_block%}
+
+<div class="container">
+  <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+          <div class="card" style="width: 100%; background-color: rgb(103, 103, 180);">
+            <div class="card-header text-center">
+              Movie Detail
+            </div>
+            <div class=" container" style="width: 100%">
+            
+                <img src="{{movies.poster_image.url}}" class="card-img-top" alt="...">
+        
+              <div class="card-body">
+                <h5 class="card-title">{{movies.movie_name}}</h5>
+                
+               
+              </div>
+              <ul class="list-group list-group-flush" >
+                <li class="list-group-item">{{movies.year}}</li>
+                <li class="list-group-item">{{movies.runtime}}</li>
+                <li class="list-group-item">{{movies.language}}</li>
+                <li class="list-group-item">{{movies.genres}}</li>
+                <li class="list-group-item">
+                  <div class="row">
+                      <div class="col-6">
+                          <a href="{%url 'movie-edit' movies.id%}" class="btn btn-outline-warning form-control">Edit</a>
+                          
+                      </div>
+                      <div class="col-6">
+                          <a href="{%url 'movie-delete' movies.id%}" class="btn btn-outline-danger form-control">Delete</a>
+                      </div>
+                  </div>
+                </li>
+                
+              </ul>
+            </div>
+             
+            </div>
+      </div>
+  </div>
+</div>
+
+{%endblock%}
